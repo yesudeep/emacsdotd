@@ -33,3 +33,52 @@
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "C-S-<backspace>") 'kill-line)
 
+;; Inhibit startup message.
+(setq inhibit-startup-message t)
+(setq initial-scratch-message nil)
+
+;; Can have values: (t, 'visit-save, 'visit, nil)
+(setq require-final-newline 'visit-save)
+
+;; Move line up.
+(defun my-move-line-up() 
+  "Move the current line up one."
+  (interactive)
+  (let ((col (current-column)))
+    (save-excursion (next-line)
+                    (transpose-lines -1))
+    (move-to-column col)))
+
+;; Move line down.
+(defun my-move-line-down() 
+  "Move the current line down one."
+  (interactive)
+  (let ((col (current-column)))
+    (save-excursion (next-line)
+                    (transpose-lines 1))
+    (next-line)
+    (move-to-column col)))
+
+;; Line movement keybindings.
+(global-set-key (kbd "M-<up>") 'my-move-line-up)
+(global-set-key (kbd "M-<down>") 'my-move-line-down)
+
+;; Syntax highlighting
+(global-font-lock-mode t)
+(setq font-lock-maximum-decoration t)
+
+;; Make y or n suffice for a yes-or-no question.
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Turn on parentheses matching.
+(show-paren-mode t)
+(setq show-paren-style 'mixed)
+
+;; Transient mark mode (show marks visually)
+(transient-mark-mode t)
+
+;; Highlight when doing a query replace.
+(setq query-replace-highlight t)
+
+;; Default major mode
+(setq default-major-mode 'text-mode)
