@@ -28,3 +28,8 @@
 
 ;; Automatically fill (right margin) bleed.
 (setq auto-fill-mode 1)
+
+;; Kill entire line with C-k and use C-S-backspace for killing from beginning
+(global-set-key (kbd "C-k") 'kill-whole-line)
+(global-set-key (kbd "C-S-<backspace>") 'kill-line)
+
