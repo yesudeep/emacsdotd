@@ -3,9 +3,13 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (add-to-list 'load-path "~/.emacs.d/load")
+(add-to-list 'load-path "~/.emacs.d/modes")
 
+;; (load-file "~/.emacs.d/load/cache.el")
+(load-file "~/.emacs.d/load/modes.el")
 (load-file "~/.emacs.d/load/prefs.el")
 (load-file "~/.emacs.d/load/snippets.el")
+(load-file "~/.emacs.d/load/typing-pairs.el")
 (load-file "~/.emacs.d/load/ido-smex.el")  ;; Should be loaded last.
 
 (defun byte-compile-user-init-file ()
@@ -21,3 +25,4 @@
     (add-hook 'after-save-hook 'byte-compile-user-init-file t t)))
 ;; (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'emacs-lisp-mode-hook 'my-emacs-lisp-mode-hook)
+(add-hook 'kill-emacs-hook 'byte-compile-user-init-file t t)
