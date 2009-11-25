@@ -1,10 +1,12 @@
 
+(add-to-list 'load-path "~/.emacs.d/plugins/smex")
+
 ;; Should be at the very end.
 ;; We want IDO.
 (require 'ido)
 (ido-mode t)
 
-;; Smex
+;; Smex (ido completion for M-x commands)
 (require 'smex)
 (smex-initialize)  ;; This should run after everything has loaded.
 (global-set-key (kbd "M-x") 'smex)
