@@ -1,3 +1,6 @@
 [submodule "plugins/smex"]
 	path = plugins/smex
 	url = git://github.com/nonsequitur/smex.git
+[submodule "plugins/anything-config"]
+	path = plugins/anything-config
+	url = git://repo.or.cz/anything-config.git
