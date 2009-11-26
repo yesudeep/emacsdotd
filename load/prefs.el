@@ -17,10 +17,10 @@
 ;; Highlight the current line.
 (global-hl-line-mode 1)
 
-;; Show the line number in the minibar.
+;; Show the line number in the minibuffer.
 (line-number-mode 1)
 
-;; Show the column number in the minibar.
+;; Show the column number in the minibuffer.
 (column-number-mode 1)
 
 ;; Fill column width is (right margin)
@@ -82,3 +82,6 @@
 
 ;; Default major mode
 (setq default-major-mode 'text-mode)
+
+;; Font
+;;(setq default-frame-alist '((font . "Monaco")))

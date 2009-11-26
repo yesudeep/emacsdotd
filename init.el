@@ -9,11 +9,12 @@
 ;; (load-file "~/.emacs.d/load/cache.el")
 (load-file "~/.emacs.d/load/modes.el")
 (load-file "~/.emacs.d/load/prefs.el")
+(load-file "~/.emacs.d/load/typing-pairs.el")
 (load-file "~/.emacs.d/load/snippets.el")
 (load-file "~/.emacs.d/load/completion.el")
-(load-file "~/.emacs.d/load/typing-pairs.el")
 (load-file "~/.emacs.d/load/ido-smex.el")  ;; Should be loaded last.
 
+;; Recompile the init file (~/.emacs) on buffer-save or emacs-exit.
 (defun byte-compile-user-init-file ()
   (let ((byte-compile-warnings '(unresolved)))
         ;; in case compilation fails, don't leave the old .elc around:
