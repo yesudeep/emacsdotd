@@ -13,3 +13,6 @@
 [submodule "modes/org-mode"]
 	path = modes/org-mode
 	url = git://repo.or.cz/org-mode.git
+[submodule "modes/markdown-mode"]
+	path = modes/markdown-mode
+	url = git://jblevins.org/git/markdown-mode.git
