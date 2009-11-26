@@ -42,3 +42,13 @@
 (setq load-path (cons "~/.emacs.d/modes/org-mode/lisp" load-path))
 (setq load-path (cons "~/.emacs.d/modes/org-mode/contrib/lisp" load-path))
 
+;; ***************************************************************************
+;; Markdown-mode
+(add-to-list 'load-path "~/.emacs.d/modes/markdown-mode")
+
+(autoload 'markdown-mode "markdown-mode.el"
+  "Major mode for editing Markdown files." t)
+(setq auto-mode-alist
+      (cons '("\\.text" . markdown-mode) auto-mode-alist))
+(setq auto-mode-alist
+      (cons '("\\.markdown" . markdown-mode) auto-mode-alist))
