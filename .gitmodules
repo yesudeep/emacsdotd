@@ -10,3 +10,6 @@
 [submodule "modes/textmate-mode"]
 	path = modes/textmate-mode
 	url = git://github.com/defunkt/textmate.el.git
+[submodule "modes/org-mode"]
+	path = modes/org-mode
+	url = git://repo.or.cz/org-mode.git
