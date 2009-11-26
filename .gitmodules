@@ -16,3 +16,6 @@
 [submodule "modes/markdown-mode"]
 	path = modes/markdown-mode
 	url = git://jblevins.org/git/markdown-mode.git
+[submodule "color-themes/color-theme-github"]
+	path = color-themes/color-theme-github
+	url = git://github.com/dudleyf/color-theme-github.git
