@@ -4,3 +4,6 @@
 [submodule "plugins/anything-config"]
 	path = plugins/anything-config
 	url = git://repo.or.cz/anything-config.git
+[submodule "plugins/zencoding"]
+	path = plugins/zencoding
+	url = git://github.com/chrisdone/zencoding.git
