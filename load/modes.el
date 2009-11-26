@@ -36,3 +36,9 @@
 (add-to-list 'load-path "~/.emacs.d/modes/textmate-mode")
 (require 'textmate)
 (textmate-mode)
+
+;; ***************************************************************************
+;; Org-mode
+(setq load-path (cons "~/.emacs.d/modes/org-mode/lisp" load-path))
+(setq load-path (cons "~/.emacs.d/modes/org-mode/contrib/lisp" load-path))
+
