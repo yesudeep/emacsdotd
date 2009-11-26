@@ -7,6 +7,7 @@
 (add-to-list 'load-path "~/.emacs.d/modes")
 
 ;; (load-file "~/.emacs.d/load/cache.el")
+(load-file "~/.emacs.d/load/colors.el")
 (load-file "~/.emacs.d/load/modes.el")
 (load-file "~/.emacs.d/load/prefs.el")
 (load-file "~/.emacs.d/load/typing-pairs.el")
