@@ -1,7 +1,10 @@
 My emacs configuration
 
+Clone using::
+      
+      git clone git@github.com:yesudeep/emacsdotd.git ~/.emacs.d
 
-Just put these lines in your ~/.emacs file::
+And then put these lines in your ~/.emacs file::
 
     ;; Make sure this file executes.
     (load-file "~/.emacs.d/init.el")
