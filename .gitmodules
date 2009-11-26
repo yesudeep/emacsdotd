@@ -7,3 +7,6 @@
 [submodule "plugins/zencoding"]
 	path = plugins/zencoding
 	url = git://github.com/chrisdone/zencoding.git
+[submodule "modes/textmate-mode"]
+	path = modes/textmate-mode
+	url = git://github.com/defunkt/textmate.el.git
