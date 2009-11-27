@@ -19,3 +19,6 @@
 [submodule "color-themes/color-theme-github"]
 	path = color-themes/color-theme-github
 	url = git://github.com/dudleyf/color-theme-github.git
+[submodule "plugins/egg"]
+	path = plugins/egg
+	url = git://github.com/bogolisk/egg.git
