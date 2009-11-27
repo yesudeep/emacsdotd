@@ -22,3 +22,6 @@
 [submodule "plugins/egg"]
 	path = plugins/egg
 	url = git://github.com/bogolisk/egg.git
+[submodule "modes/haml"]
+	path = modes/haml
+	url = git://github.com/nex3/haml.git
