@@ -22,9 +22,7 @@
 (require 'zencoding-mode)
 (add-hook 'sgml-mode-hook 'zencoding-mode) ;; Automatically start on any markup modes.
 (add-hook 'html-mode-hook 'zencoding-mode)
-(define-key zencoding-mode-keymap (kbd "<tab>") 'zencoding-expand-line)
-
-;;(define-key zencoding-mode-keymap (kbd "C-e") 'zencoding-expand-line)
+(define-key zencoding-mode-keymap (kbd "C-<tab>") 'zencoding-expand-line)
 
 ;; (if zencoding-mode-keymap 
 ;;  (progn
