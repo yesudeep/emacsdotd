@@ -50,3 +50,9 @@
       (cons '("\\.text" . markdown-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.markdown" . markdown-mode) auto-mode-alist))
+
+
+;; ***************************************************************************
+;; SASS Mode
+(add-to-list 'load-path "~/.emacs.d/modes/haml/extra")
+(require 'sass-mode)
