@@ -2,5 +2,6 @@
 *.bak
 *.bkp
 *.elc
+*.swp
 anything-c-adaptive-history
 
