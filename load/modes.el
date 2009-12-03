@@ -22,9 +22,7 @@
 (require 'zencoding-mode)
 (add-hook 'sgml-mode-hook 'zencoding-mode) ;; Automatically start on any markup modes.
 (add-hook 'html-mode-hook 'zencoding-mode)
-(define-key zencoding-mode-keymap (kbd "<tab>") 'zencoding-expand-line)
-
-;;(define-key zencoding-mode-keymap (kbd "C-e") 'zencoding-expand-line)
+(define-key zencoding-mode-keymap (kbd "C-<tab>") 'zencoding-expand-line)
 
 ;; (if zencoding-mode-keymap 
 ;;  (progn
@@ -52,3 +50,14 @@
       (cons '("\\.text" . markdown-mode) auto-mode-alist))
 (setq auto-mode-alist
       (cons '("\\.markdown" . markdown-mode) auto-mode-alist))
+
+
+;; ***************************************************************************
+;; SASS Mode
+(add-to-list 'load-path "~/.emacs.d/modes/haml/extra")
+(require 'sass-mode)
+
+;; ***************************************************************************
+(add-to-list 'load-path "~/.emacs.d/modes/js2-mode")
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
