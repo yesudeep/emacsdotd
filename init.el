@@ -10,7 +10,7 @@
 (load-file "~/.emacs.d/load/modes.el")
 (load-file "~/.emacs.d/load/prefs.el")
 (load-file "~/.emacs.d/load/typing-pairs.el")
-(load-file "~/.emacs.d/load/snippets.el")
+;;(load-file "~/.emacs.d/load/snippets.el")
 (load-file "~/.emacs.d/load/completion.el")
 (load-file "~/.emacs.d/load/ido-smex.el")  ;; Should be loaded last.
 
