@@ -24,7 +24,7 @@
 (add-hook 'html-mode-hook 'zencoding-mode)
 (define-key zencoding-mode-keymap (kbd "C-<tab>") 'zencoding-expand-line)
 
-;; (if zencoding-mode-keymap 
+;; (if zencoding-mode-keymap
 ;;  (progn
 ;;    (setq zencoding-mode-keymap (make-sparse-keymap))
 ;;    (define-key zencoding-mode-keymap (kbd "C-e") 'zencoding-expand-line)))
@@ -59,5 +59,17 @@
 
 ;; ***************************************************************************
 ;; (add-to-list 'load-path "~/.emacs.d/modes/js2-mode/build")
-(autoload 'js2-mode "js2" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;; (add-to-list 'load-path "~/.emacs.d/modes/js2")
+;;(autoload 'js2-mode "js2" nil t)
+;;(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+
+;; ***************************************************************************
+;; Predictive mode
+
+(add-to-list 'load-path "~/.emacs.d/modes/predictive")
+(add-to-list 'load-path "~/.emacs.d/modes/predictive/texinfo")
+(add-to-list 'load-path "~/.emacs.d/modes/predictive/html")
+(add-to-list 'load-path "~/.emacs.d/modes/predictive/latex")
+
+(require 'predictive)
