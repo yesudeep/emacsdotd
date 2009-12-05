@@ -5,6 +5,7 @@
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (add-to-list 'load-path "~/.emacs.d/load")
 (add-to-list 'load-path "~/.emacs.d/modes")
+(add-to-list 'load-path "~/.emacs.d/modes/python-mode")
 
 ;; (load-file "~/.emacs.d/load/cache.el")
 ;;(load-file "~/.emacs.d/load/colors.el")
