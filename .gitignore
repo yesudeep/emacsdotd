@@ -2,5 +2,11 @@
 *.bak
 *.bkp
 *.elc
+*.swp
+*.py[co]
 anything-c-adaptive-history
+*.egg*
+plugins/rope/build
+plugins/ropemacs/build
+plugins/ropemode/build
 

@@ -2,6 +2,9 @@
 ;; General preferences.
 ;; ***************************************************************************
 
+;; Delete trailing whitespace
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; Enable the use of the mouse-wheel.
 (mouse-wheel-mode t)
 

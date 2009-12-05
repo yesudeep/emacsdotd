@@ -25,3 +25,6 @@
 [submodule "modes/haml"]
 	path = modes/haml
 	url = git://github.com/nex3/haml.git
+[submodule "plugins/auto-complete"]
+	path = plugins/auto-complete
+	url = git://github.com/m2ym/auto-complete.git

@@ -1,13 +1,23 @@
 ;; URL: http://github.com/yesudeep/emacsdotd
 
+;; Python path and version.
+(setenv "PYTHONPATH" (concat (getenv "PYTHONPATH")
+                             ":" (expand-file-name "~/.emacs.d/plugins/pymacs")
+                             ":" (expand-file-name "~/.emacs.d/modes/python-mode")
+                             ":" (expand-file-name "~/.emacs.d/plugins/ropemode")
+                             ))
+
 ;; Add these directories to the load path.
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (add-to-list 'load-path "~/.emacs.d/load")
 (add-to-list 'load-path "~/.emacs.d/modes")
+(add-to-list 'load-path "~/.emacs.d/modes/python-mode")
+(progn (cd "~/.emacs.d/plugins")
+       (normal-top-level-add-subdirs-to-load-path))
 
 ;; (load-file "~/.emacs.d/load/cache.el")
-(load-file "~/.emacs.d/load/colors.el")
+;;(load-file "~/.emacs.d/load/colors.el")
 (load-file "~/.emacs.d/load/modes.el")
 (load-file "~/.emacs.d/load/prefs.el")
 (load-file "~/.emacs.d/load/typing-pairs.el")
