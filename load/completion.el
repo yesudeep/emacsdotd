@@ -18,7 +18,6 @@
 ;; Using Yasnippet
 ;; http://code.google.com/p/yasnippet/
 
-(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 
 (require 'yasnippet)
 ;; Don't map TAB to yasnippet, we want to trigger it using auto-complete.el
@@ -29,7 +28,6 @@
 
 ;; ***************************************************************************
 ;; Auto-complete
-(add-to-list 'load-path "~/.emacs.d/plugins/auto-complete")
 (require 'auto-complete)
 (require 'auto-complete-config)
 
@@ -50,7 +48,7 @@
 (add-hook 'auto-complete-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-filename)))
 
 ;; ***************************************************************************
-;; Py-complete and pymacs completion
+;; Py-complete, ropemacs, and pymacs
 ;; Follow this:
 ;; http://www.rwdev.eu/articles/emacspyeng
 ;; Install pymacs
@@ -60,11 +58,10 @@
 ;;    Copy ~/.emacs.d/modes/python-mode/pycomplete.py to your PYTHONPATH
 ;;    if the following does not work.
 
-(setenv "PYTHONPATH" "~/.emacs.d/modes/python-mode/")
-
-(add-to-list 'load-path "~/.emacs.d/plugins/Pymacs-0.24-beta1")
 (require 'pycomplete)
 (autoload 'pymacs-load "pymacs" nil t)
 (autoload 'pymacs-eval "pymacs" nil t)
 (autoload 'pymacs-apply "pymacs")
 (autoload 'pymacs-call "pymacs")
+
+
