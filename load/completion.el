@@ -5,9 +5,9 @@
 
 ;; Anything
 ;; (add-to-list 'load-path "~/.emacs.d/plugins/anything-config")
-;; (require 'anything)
-;; (require 'anything-config)
-;; (require 'anything-extension)
+(require 'anything)
+(require 'anything-config)
+(require 'anything-extension)
 
 ;; Find recursive
 ;; (require 'find-recursive)
@@ -18,17 +18,18 @@
 ;; Using Yasnippet
 ;; http://code.google.com/p/yasnippet/
 
-(require 'yasnippet)
+;;(require 'yasnippet)
 ;; Don't map TAB to yasnippet, we want to trigger it using auto-complete.el
-(setq yas/trigger-key (kbd "C-c <kp-multiply>"))
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
+;;(setq yas/trigger-key (kbd "C-c <kp-multiply>"))
+;;(yas/initialize)
+;;(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
 
 
 ;; ***************************************************************************
 ;; Auto-complete
 (require 'auto-complete)
 (require 'auto-complete-config)
+(require 'ac-anything)
 
 ;; Configuration
 (global-auto-complete-mode t)
@@ -39,6 +40,7 @@
 (define-key ac-completing-map "\M-n" 'ac-next)
 (define-key ac-completing-map "\M-p" 'ac-previous)
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+(define-key ac-complete-mode-map (kbd "M-/") 'ac-complete-with-anything)
 
 ;; The common sources for all modes.
 (custom-set-variables
@@ -66,8 +68,10 @@
         f90-mode
         fortran-mode
         haskell-mode
+        html-mode
         java-mode
         javascript-mode
+        js-mode
         lisp-interaction-mode
         lisp-mode
         literate-haskell-mode
@@ -81,7 +85,8 @@
         scheme-mode
         sgml-mode
         sh-mode
-        xml-mode))
+        xml-mode
+        yaml-mode))
 ;; (add-to-list 'ac-trigger-commands 'org-self-insert-command) ; if you want enable auto-complete at org-mode, uncomment this line
 
 
@@ -96,7 +101,6 @@
                                   '(ac-source-symbols
                                     ac-source-filename
                                     ac-source-yasnippet
-                                    ac-source-ropemacs
                                     ac-source-files-in-current-dir))))
 (add-hook 'emacs-lisp-mode-hook
           (lambda () (add-to-list 'ac-sources
@@ -110,6 +114,8 @@
                                    ac-source-files-in-current-dir
                                    ac-source-filename
                                    ac-source-css-keywords))))
+
+;; Anything and autocomplete.
 
 
 ;; ***************************************************************************
@@ -128,3 +134,4 @@
 (autoload 'pymacs-eval "pymacs" nil t)
 (autoload 'pymacs-apply "pymacs")
 (autoload 'pymacs-call "pymacs")
+

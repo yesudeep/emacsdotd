@@ -123,3 +123,8 @@
 
 ;; (brm-init)
 ;; (require 'pycomplete)
+
+;; ***************************************************************************
+;; Git integration using egg.
+
+(require 'egg)
