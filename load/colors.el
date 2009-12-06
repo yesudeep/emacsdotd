@@ -10,6 +10,8 @@
 (load-file "~/.emacs.d/color-themes/color-theme-twilight/color-theme-twilight.el")
 (load-file "~/.emacs.d/color-themes/color-theme-blackboard.el")
 (load-file "~/.emacs.d/color-themes/color-theme-railscasts/color-theme-railscasts.el")
+(load-file "~/.emacs.d/color-themes/color-theme-ir-black/color-theme-ir-black.el")
+
 
 ;; ***************************************************************************
 ;; Pick your theme.
@@ -46,7 +48,8 @@
           ;;'color-theme-less
           ;;'color-theme-blackboard
           ;;'color-theme-twilight
-          'color-theme-railscasts
+          ;;'color-theme-railscasts
+          'color-theme-ir-black
           )
 (add-hook 'after-make-console-frame-hooks
           ;;'color-theme-tty-dark
