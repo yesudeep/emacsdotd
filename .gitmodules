@@ -28,3 +28,6 @@
 [submodule "plugins/auto-complete"]
 	path = plugins/auto-complete
 	url = git://github.com/m2ym/auto-complete.git
+[submodule "color-themes/color-theme-twilight"]
+	path = color-themes/color-theme-twilight
+	url = git://github.com/crafterm/twilight-emacs.git

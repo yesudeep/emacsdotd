@@ -1,4 +1,4 @@
-;; Caching all the elisp code in the .emacs.d directory. 
+;; Caching all the elisp code in the .emacs.d directory.
 
 (add-to-list 'load-path "~/.emacs.d/plugins/elisp-cache")
 
