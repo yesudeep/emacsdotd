@@ -34,3 +34,6 @@
 [submodule "color-themes/color-theme-railscasts"]
 	path = color-themes/color-theme-railscasts
 	url = git://github.com/olegshaldybin/color-theme-railscasts.git
+[submodule "color-themes/color-theme-ir-black"]
+	path = color-themes/color-theme-ir-black
+	url = git://github.com/burke/color-theme-ir-black.git
