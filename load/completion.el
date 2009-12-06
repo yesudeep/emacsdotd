@@ -35,6 +35,7 @@
 (global-auto-complete-mode t)
 (setq ac-auto-start 2)
 (setq ac-dwim t)
+(setq ac-ignore-case t)
 
 ;; Keybindings
 (define-key ac-completing-map "\M-n" 'ac-next)
