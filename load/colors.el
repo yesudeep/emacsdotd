@@ -8,6 +8,8 @@
 (require 'color-theme-less)
 (load-file "~/.emacs.d/color-themes/color-theme-github/color-theme-github.el")
 (load-file "~/.emacs.d/color-themes/color-theme-twilight/color-theme-twilight.el")
+(load-file "~/.emacs.d/color-themes/color-theme-blackboard.el")
+(load-file "~/.emacs.d/color-themes/color-theme-railscasts/color-theme-railscasts.el")
 
 ;; ***************************************************************************
 ;; Pick your theme.
@@ -28,9 +30,25 @@
 ;;(color-theme-zenburn)
 ;;(color-theme-subdued)    ;; Has problems with contrast when writing comments.
 ;;(color-theme-less)
-;;  (color-theme-twilight)     ;; Good contrast and readability.
+;;(color-theme-twilight)     ;; Good contrast and readability.
 ;;)
 
 (set-variable 'color-theme-is-global nil)
-(add-hook 'after-make-window-system-frame-hooks 'color-theme-twilight)
-(add-hook 'after-make-console-frame-hooks 'color-theme-emacs-nw)
+(add-hook 'after-make-window-system-frame-hooks
+          ;; Light
+          ;;'color-theme-emacs-nw
+          ;;'color-theme-github
+
+          ;; Dark
+          ;;'color-theme-tango
+          ;;'color-theme-zenburn
+          ;;'color-theme-subdued
+          ;;'color-theme-less
+          ;;'color-theme-blackboard
+          ;;'color-theme-twilight
+          'color-theme-railscasts
+          )
+(add-hook 'after-make-console-frame-hooks
+          ;;'color-theme-tty-dark
+          'color-theme-emacs-nw
+          )
