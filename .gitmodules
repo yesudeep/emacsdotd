@@ -31,3 +31,6 @@
 [submodule "color-themes/color-theme-twilight"]
 	path = color-themes/color-theme-twilight
 	url = git://github.com/crafterm/twilight-emacs.git
+[submodule "color-themes/color-theme-railscasts"]
+	path = color-themes/color-theme-railscasts
+	url = git://github.com/olegshaldybin/color-theme-railscasts.git
