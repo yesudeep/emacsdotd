@@ -14,19 +14,23 @@
 ;; Themes made for GUI don't always look good in the console.
 ;; So choose a different theme when in the console or none at all, therefore,
 ;; enabling the default theme which works best in the console.
-(if (eq (symbol-value 'window-system) nil)
-    ;; In the console:
-    ;;(color-theme-tty-dark)
-    nil
+;; (if (eq (symbol-value 'window-system) nil)
+;;     ;; In the console:
+;;     ;;(color-theme-tty-dark)
+;;     nil
 
-  ;; In the GUI:
-  ;; Light
-  ;;(color-theme-github)
+;;   ;; In the GUI:
+;; Light
+;;(color-theme-github)
 
-  ;; Dark
-  ;;(color-theme-tango)
-  ;;(color-theme-zenburn)
-  ;;(color-theme-subdued)    ;; Has problems with contrast when writing comments.
-  ;;(color-theme-less)
-  (color-theme-twilight)     ;; Good contrast and readability.
-)
+;; Dark
+;;(color-theme-tango)
+;;(color-theme-zenburn)
+;;(color-theme-subdued)    ;; Has problems with contrast when writing comments.
+;;(color-theme-less)
+;;  (color-theme-twilight)     ;; Good contrast and readability.
+;;)
+
+(set-variable 'color-theme-is-global nil)
+(add-hook 'after-make-window-system-frame-hooks 'color-theme-twilight)
+(add-hook 'after-make-console-frame-hooks 'color-theme-emacs-nw)

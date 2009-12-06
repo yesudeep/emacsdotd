@@ -22,6 +22,30 @@
 (progn (cd "~/.emacs.d/modes")
        (normal-top-level-add-subdirs-to-load-path))
 
+;; ***************************************************************************
+;; Custom hooks
+;; Two new separate hooks for the creation of window-system and tty (console) frames.
+;; This is used to run different code for console and window-system.
+;; See colors.el for example.
+(defvar after-make-console-frame-hooks '()
+"Hooks to run after creating a new TTY frame")
+(defvar after-make-window-system-frame-hooks '()
+"Hooks to run after creating a new window-system frame")
+
+(defun run-after-make-frame-hooks (frame)
+"Selectively run either `after-make-console-frame-hooks' or
+`after-make-window-system-frame-hooks'"
+(select-frame frame)
+(run-hooks (if window-system
+'after-make-window-system-frame-hooks
+'after-make-console-frame-hooks)))
+
+(add-hook 'after-make-frame-functions 'run-after-make-frame-hooks)
+(add-hook 'after-init-hook
+(lambda ()
+(run-after-make-frame-hooks (selected-frame))))
+
+
 ;;(load-file "~/.emacs.d/load/cache.el")
 (load-file "~/.emacs.d/load/colors.el")
 (load-file "~/.emacs.d/load/modes.el")
@@ -46,3 +70,4 @@
 ;; (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'emacs-lisp-mode-hook 'my-emacs-lisp-mode-hook)
 (add-hook 'kill-emacs-hook 'byte-compile-user-init-file t t)
+
