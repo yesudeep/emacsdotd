@@ -103,6 +103,14 @@
                                     ac-source-filename
                                     ac-source-yasnippet
                                     ac-source-files-in-current-dir))))
+(add-hook 'html-mode
+          (lambda () (add-to-list 'ac-sources
+                                  '(ac-source-symbols
+                                    ac-source-filename
+                                    ac-source-files-in-current-dir
+                                    ac-source-words-in-buffer
+                                    ac-source-abbrev
+                                    ac-source-css-keywords))))
 (add-hook 'emacs-lisp-mode-hook
           (lambda () (add-to-list 'ac-sources
                                   'ac-source-symbols)))
@@ -135,4 +143,5 @@
 (autoload 'pymacs-eval "pymacs" nil t)
 (autoload 'pymacs-apply "pymacs")
 (autoload 'pymacs-call "pymacs")
+
 
