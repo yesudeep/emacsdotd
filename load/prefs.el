@@ -60,8 +60,8 @@
 ;; Automatically fill (right margin) bleed.
 ;; Do not autofill.  This screws up HTML content.
 ;;(setq auto-fill-mode 1)
-
 ;; Kill entire line with C-k and use C-S-backspace for killing from beginning
+
 (defun kill-and-join-forward (&optional arg)
   "If at end of line, join with following; otherwise kill line.
     Deletes whitespace at join."
@@ -79,28 +79,35 @@
 ;; Can have values: (t, 'visit-save, 'visit, nil)
 (setq require-final-newline 'visit-save)
 
-;; Move line up.
-(defun my-move-line-up()
-  "Move the current line up one."
-  (interactive)
-  (let ((col (current-column)))
-    (save-excursion (next-line)
-                    (transpose-lines -1))
-    (move-to-column col)))
+;; ***************************************************************************
+;; Line movement.
+;; http://www.emacswiki.org/emacs/MoveLine
+;; -- Joe Smith
+(defun move-line (n)
+  "Move the current line up or down by N lines."
+  (interactive "p")
+  (setq col (current-column))
+  (beginning-of-line) (setq start (point))
+  (end-of-line) (forward-char) (setq end (point))
+  (let ((line-text (delete-and-extract-region start end)))
+    (forward-line n)
+    (insert line-text)
+    ;; restore point to original column in moved line
+    (forward-line -1)
+    (forward-char col)))
+(defun move-line-up (n)
+  "Move the current line up by N lines."
+  (interactive "p")
+  (move-line (if (null n) -1 (- n))))
+(defun move-line-down (n)
+  "Move the current line down by N lines."
+  (interactive "p")
+  (move-line (if (null n) 1 n)))
 
-;; Move line down.
-(defun my-move-line-down()
-  "Move the current line down one."
-  (interactive)
-  (let ((col (current-column)))
-    (save-excursion (next-line)
-                    (transpose-lines 1))
-    (next-line)
-    (move-to-column col)))
+(global-set-key (kbd "M-<up>") 'move-line-up)
+(global-set-key (kbd "M-<down>") 'move-line-down)
 
-;; Line movement keybindings.
-(global-set-key (kbd "M-<up>") 'my-move-line-up)
-(global-set-key (kbd "M-<down>") 'my-move-line-down)
+;; End line movement.
 
 ;; Syntax highlighting
 (global-font-lock-mode t)
