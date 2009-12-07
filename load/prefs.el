@@ -16,6 +16,34 @@
 
 ;; Use 4 spaces for indentation.
 (setq standard-indent 4)
+(setq tab-width 4)
+(setq-default c-basic-offset 4)
+(setq-default py-indent-offset 4)
+
+;; Automatically indent on return.
+;; See http://www.emacswiki.org/emacs-en/AutoIndentation
+;;
+;;(defun set-newline-and-indent ()
+;;  (local-set-key (kbd "RET") 'newline-and-indent))
+;;(add-hook 'c-mode 'set-newline-and-indent)
+;;(add-hook 'java-mode 'set-newline-and-indent)
+
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+;; Automatically indent code when pasted.
+(dolist (command '(yank yank-pop))
+  (eval `(defadvice ,command (after indent-region activate)
+           (and (not current-prefix-arg)
+                (member major-mode '(emacs-lisp-mode lisp-mode
+                                                     clojure-mode    scheme-mode
+                                                     haskell-mode    ruby-mode
+                                                     rspec-mode      python-mode
+                                                     c-mode          c++-mode
+                                                     objc-mode       latex-mode
+                                                     plain-tex-mode))
+                (let ((mark-even-if-inactive transient-mark-mode))
+                  (indent-region (region-beginning) (region-end) nil))))))
+
 
 ;; Highlight the current line.
 (global-hl-line-mode 1)
@@ -34,8 +62,15 @@
 ;;(setq auto-fill-mode 1)
 
 ;; Kill entire line with C-k and use C-S-backspace for killing from beginning
+(defun kill-and-join-forward (&optional arg)
+  "If at end of line, join with following; otherwise kill line.
+    Deletes whitespace at join."
+  (interactive "P")
+  (if (and (eolp) (not (bolp)))
+      (delete-indentation t)
+    (kill-line arg)))
 (global-set-key (kbd "C-k") 'kill-whole-line)
-(global-set-key (kbd "C-S-<backspace>") 'kill-line)
+(global-set-key (kbd "C-S-<backspace>") 'kill-and-join-forward)
 
 ;; Inhibit startup message.
 (setq inhibit-startup-message t)
@@ -45,7 +80,7 @@
 (setq require-final-newline 'visit-save)
 
 ;; Move line up.
-(defun my-move-line-up() 
+(defun my-move-line-up()
   "Move the current line up one."
   (interactive)
   (let ((col (current-column)))
@@ -54,7 +89,7 @@
     (move-to-column col)))
 
 ;; Move line down.
-(defun my-move-line-down() 
+(defun my-move-line-down()
   "Move the current line down one."
   (interactive)
   (let ((col (current-column)))
