@@ -136,7 +136,7 @@
 (setq query-replace-highlight t)
 
 ;; Default major mode
-(setq default-major-mode 'text-mode)
+(setq major-mode 'text-mode)
 
 ;; Font
 ;;(setq default-frame-alist '((font . "Monaco")))
