@@ -28,13 +28,14 @@
 (add-to-list 'load-path emacsdotd-root-dir)
 
 ;; Add all these subdirectories.
-(progn (cd emacsdotd-root-dir)
-       (normal-top-level-add-subdirs-to-load-path))
 (progn (cd (concat emacsdotd-root-dir "/color-themes"))
        (normal-top-level-add-subdirs-to-load-path))
 (progn (cd (concat emacsdotd-root-dir "/plugins"))
        (normal-top-level-add-subdirs-to-load-path))
 (progn (cd (concat emacsdotd-root-dir "/modes"))
+       (normal-top-level-add-subdirs-to-load-path))
+
+(progn (cd emacsdotd-root-dir)
        (normal-top-level-add-subdirs-to-load-path))
 
 
