@@ -30,10 +30,12 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 (require 'ac-anything)
+(require 'ac-dabbrev)
+
 
 ;; Configuration
 (global-auto-complete-mode t)
-(setq ac-auto-start 2)
+(setq ac-auto-start 1)
 (setq ac-dwim t)
 (setq ac-ignore-case t)
 
@@ -47,6 +49,7 @@
 (custom-set-variables
  '(ac-sources
    '(ac-source-abbrev
+     ac-source-dabbrev
      ac-source-words-in-buffer
      ac-source-words-in-same-mode-buffers
      ac-source-files-in-current-dir
@@ -94,7 +97,7 @@
 ;; Mode hooks
 (add-hook 'eshell-mode-hook
           (lambda () (add-to-list 'ac-sources
-                                  '(ac-source-abbrev
+                                  '(ac-source-dabbrev
                                     ac-source-files-in-current-dir
                                     ac-source-words-in-buffer))))
 (add-hook 'python-mode-hook
