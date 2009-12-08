@@ -1,10 +1,9 @@
 ;; Tab completion.
-;; (add-to-list 'load-path "~/.emacs.d/plugins/nxhtml/util")
+;; (add-to-list 'load-path (concat emacsdotd-root-dir "/plugins/nxhtml/util"))
 ;; (require 'tabkey2)
 ;; (tabkey2-mode t)
 
 ;; Anything
-;; (add-to-list 'load-path "~/.emacs.d/plugins/anything-config")
 (require 'anything)
 (require 'anything-config)
 (require 'anything-extension)
@@ -22,7 +21,7 @@
 ;; Don't map TAB to yasnippet, we want to trigger it using auto-complete.el
 ;;(setq yas/trigger-key (kbd "C-c <kp-multiply>"))
 ;;(yas/initialize)
-;;(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
+;;(yas/load-directory (concat emacsdotd-root-dir "/plugins/yasnippet/snippets"))
 
 
 ;; ***************************************************************************
@@ -57,40 +56,40 @@
 
 ;; Autocomplete will be enabled for all these modes.
 (setq-default ac-modes
-      '(ada-mode
-        asm-mode
-        c++-mode
-        c-mode
-        cc-mode
-        cperl-mode
-        css-mode
-        css-mode
-        ecmascript-mode
-        emacs-lisp-mode
-        emms-tag-editor-mode
-        eshell-mode
-        f90-mode
-        fortran-mode
-        haskell-mode
-        html-mode
-        java-mode
-        javascript-mode
-        js-mode
-        lisp-interaction-mode
-        lisp-mode
-        literate-haskell-mode
-        makefile-mode
-        org-mode
-        perl-mode
-        php-mode
-        python-mode
-        ruby-mode
-        sass-mode
-        scheme-mode
-        sgml-mode
-        sh-mode
-        xml-mode
-        yaml-mode))
+              '(ada-mode
+                asm-mode
+                c++-mode
+                c-mode
+                cc-mode
+                cperl-mode
+                css-mode
+                css-mode
+                ecmascript-mode
+                emacs-lisp-mode
+                emms-tag-editor-mode
+                eshell-mode
+                f90-mode
+                fortran-mode
+                haskell-mode
+                html-mode
+                java-mode
+                javascript-mode
+                js-mode
+                lisp-interaction-mode
+                lisp-mode
+                literate-haskell-mode
+                makefile-mode
+                org-mode
+                perl-mode
+                php-mode
+                python-mode
+                ruby-mode
+                sass-mode
+                scheme-mode
+                sgml-mode
+                sh-mode
+                xml-mode
+                yaml-mode))
 ;; (add-to-list 'ac-trigger-commands 'org-self-insert-command) ; if you want enable auto-complete at org-mode, uncomment this line
 
 
@@ -138,13 +137,12 @@
 ;; Copy python-mode.el (launchpad) and pycomplete.el to load path
 ;;    (these are already in here.)
 ;; One additional step:
-;;    Copy ~/.emacs.d/modes/python-mode/pycomplete.py to your PYTHONPATH
-;;    if the following does not work.
+;;    Copy (concat emacsdotd-root-dir "/modes/python-mode/pycomplete.py")"
+;; to your PYTHONPATH if the following does not work.
 
 (require 'pycomplete)
 (autoload 'pymacs-load "pymacs" nil t)
 (autoload 'pymacs-eval "pymacs" nil t)
 (autoload 'pymacs-apply "pymacs")
 (autoload 'pymacs-call "pymacs")
-
 

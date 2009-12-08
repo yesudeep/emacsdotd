@@ -1,6 +1,4 @@
 
-(add-to-list 'load-path "~/.emacs.d/plugins/smex")
-
 ;; Should be at the very end.
 ;; We want IDO.
 (require 'ido)

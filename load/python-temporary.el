@@ -1,7 +1,7 @@
 ;; Rope
-(setq pymacs-load-path '("~/.emacs.d/plugins/rope"
-                         "~/.emacs.d/plugins/ropemode"
-                         "~/.emacs.d/plugins/ropemacs"))
+(setq pymacs-load-path '((concat "/plugins/rope")
+                         (concat "/plugins/ropemode")
+                         (concat "/plugins/ropemacs")))
 (setenv "PYMACS_PYTHON" "python2.6")
 (require 'pymacs)
 (pymacs-load "ropemacs" "rope-")
@@ -22,7 +22,7 @@
   (let (value)
     (nreverse
      (dolist (element list value)
-      (setq value (cons (format "%s%s" prefix element) value))))))
+       (setq value (cons (format "%s%s" prefix element) value))))))
 (defvar ac-source-rope
   '((candidates
      . (lambda ()
@@ -60,21 +60,21 @@
     (delete-dups candidates)))
 (add-hook 'python-mode-hook
           (lambda ()
-                 (auto-complete-mode 1)
-                 (set (make-local-variable 'ac-sources)
-                      (append ac-sources '(ac-source-rope)))
-                 (set (make-local-variable 'ac-find-function) 'ac-python-find)
-                 (set (make-local-variable 'ac-candidate-function) 'ac-python-candidate)
-                 (set (make-local-variable 'ac-auto-start) nil)))
+            (auto-complete-mode 1)
+            (set (make-local-variable 'ac-sources)
+                 (append ac-sources '(ac-source-rope)))
+            (set (make-local-variable 'ac-find-function) 'ac-python-find)
+            (set (make-local-variable 'ac-candidate-function) 'ac-python-candidate)
+            (set (make-local-variable 'ac-auto-start) nil)))
 
 ;;Ryan's python specific tab completion
-  ; Try the following in order:
-  ; 1) Try a yasnippet expansion without autocomplete
-  ; 2) If at the beginning of the line, indent
-  ; 3) If at the end of the line, try to autocomplete
-  ; 4) If the char after point is not alpha-numerical, try autocomplete
-  ; 5) Try to do a regular python indent.
-  ; 6) If at the end of a word, try autocomplete.
+                                        ; Try the following in order:
+                                        ; 1) Try a yasnippet expansion without autocomplete
+                                        ; 2) If at the beginning of the line, indent
+                                        ; 3) If at the end of the line, try to autocomplete
+                                        ; 4) If the char after point is not alpha-numerical, try autocomplete
+                                        ; 5) Try to do a regular python indent.
+                                        ; 6) If at the end of a word, try autocomplete.
 (define-key python-mode-map "\t" 'yas/expand)
 (add-hook 'python-mode-hook
           (lambda ()

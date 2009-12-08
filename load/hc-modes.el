@@ -5,7 +5,6 @@
 ;; ***************************************************************************
 ;; YAML Major Mode.
 ;;
-(add-to-list 'load-path "~/.emacs.d/modes/yaml-mode")
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 
@@ -16,9 +15,6 @@
 
 ;; ***************************************************************************
 ;; Zencoding mode
-
-;;(add-to-list 'load-path "~/.emacs.d/plugins/nxhtml/util")
-(add-to-list 'load-path "~/.emacs.d/plugins/zencoding")
 
 (require 'zencoding-mode)
 (add-hook 'sgml-mode-hook 'zencoding-mode) ;; Automatically start on any markup modes.
@@ -32,18 +28,23 @@
 
 ;; ***************************************************************************
 ;; Textmate mode.
-(add-to-list 'load-path "~/.emacs.d/modes/textmate-mode")
+;;
+
 (require 'textmate)
 (textmate-mode)
 
+
 ;; ***************************************************************************
 ;; Org-mode
-(setq load-path (cons "~/.emacs.d/modes/org-mode/lisp" load-path))
-(setq load-path (cons "~/.emacs.d/modes/org-mode/contrib/lisp" load-path))
+;;
+
+(add-to-list 'load-path (concat emacsdotd-root-dir "/modes/org-mode/lisp"))
+(add-to-list 'load-path (concat emacsdotd-root-dir "/modes/org-mode/contrib/lisp"))
+
 
 ;; ***************************************************************************
 ;; Markdown-mode
-(add-to-list 'load-path "~/.emacs.d/modes/markdown-mode")
+;;
 
 (autoload 'markdown-mode "markdown-mode.el"
   "Major mode for editing Markdown files." t)
@@ -55,12 +56,12 @@
 
 ;; ***************************************************************************
 ;; SASS Mode
-(add-to-list 'load-path "~/.emacs.d/modes/haml/extra")
+;;
+
+(add-to-list 'load-path (concat emacsdotd-root-dir "/modes/haml/extra"))
 (require 'sass-mode)
 
 ;; ***************************************************************************
-;; (add-to-list 'load-path "~/.emacs.d/modes/js2-mode/build")
-;; (add-to-list 'load-path "~/.emacs.d/modes/js2")
 ;;(autoload 'js2-mode "js2" nil t)
 ;;(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
@@ -68,10 +69,9 @@
 ;; ***************************************************************************
 ;; Predictive mode
 
-(add-to-list 'load-path "~/.emacs.d/modes/predictive")
-(add-to-list 'load-path "~/.emacs.d/modes/predictive/texinfo")
-(add-to-list 'load-path "~/.emacs.d/modes/predictive/html")
-(add-to-list 'load-path "~/.emacs.d/modes/predictive/latex")
+(add-to-list 'load-path (concat emacsdotd-root-dir "/modes/predictive/textinfo"))
+(add-to-list 'load-path (concat emacsdotd-root-dir "/modes/predictive/html"))
+(add-to-list 'load-path (concat emacsdotd-root-dir "/modes/predictive/latex"))
 
 (require 'predictive)
 
@@ -93,11 +93,11 @@
 		    (set-variable 'indent-tabs-mode nil)
 		    ;;(highlight-beyond-fill-column)
                     (define-key python-mode-map "\C-m" 'newline-and-indent)
-		    ;(pabbrev-mode)
-		    ;(abbrev-mode)
-	 )
+                                        ;(pabbrev-mode)
+                                        ;(abbrev-mode)
+                    )
+         )
       )
-)
 
 ;; Autofill inside of comments
 (defun python-auto-fill-comments-only ()
