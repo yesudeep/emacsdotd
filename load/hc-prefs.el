@@ -140,3 +140,9 @@
 
 ;; Font
 ;;(setq default-frame-alist '((font . "Monaco")))
+
+;; Cua mode
+(cua-mode t)
+(setq cua-enable-cua-keys nil)
+(setq cua-keep-region-after-copy t)
+(setq cua-auto-tabify-rectangles nil)

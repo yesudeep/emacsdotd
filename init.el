@@ -47,10 +47,14 @@
 
 (load-library "hc-colors")
 (load-library "hc-modes")
-(load-library "hc-prefs")
 (load-library "hc-typing-pairs")
 (load-library "hc-completion")
 (load-library "hc-misc")
+
+;; Load preferences and ido only after everything else has loaded.
+;; cua-mode seems to get borked if it is loaded in the beginning.
+;; A conflict may exist--disabling and reenabling it seemed to fix it.
+(load-library "hc-prefs")
 (load-library "hc-ido-smex")
 
 

@@ -128,3 +128,24 @@
 ;; Git integration using egg.
 
 (require 'egg)
+
+
+;; ***************************************************************************
+;; I like column editing mode in editors.  cua-mode does just that. cool.
+;;
+
+;; (cua-mode t)
+;;(setq cua-auto-tabify-rectangles nil)
+;;(transient-mark-mode 1)
+;;(setq cua-keep-region-after-copy t)
+;;(setq cua-enable-cua-keys nil)
+
+
+;; ***************************************************************************
+;; Dot mode
+;;
+
+(require 'dot-mode)
+(add-hook 'find-file-hooks 'dot-mode-on)
+(global-set-key [(control ?.)] (lambda () (interactive) (dot-mode 1)
+                                 (message "Dot mode activated.")))
