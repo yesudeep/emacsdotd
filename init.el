@@ -110,3 +110,8 @@
 (add-hook 'emacs-lisp-mode-hook 'my-emacs-lisp-mode-hook)
 (add-hook 'kill-emacs-hook 'byte-compile-user-init-file t t)
 
+;; ***************************************************************************
+;; Default directory.
+;;
+
+(setq default-directory "~/")
