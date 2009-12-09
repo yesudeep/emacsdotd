@@ -20,7 +20,6 @@
 (setq-default c-basic-offset 4)
 (setq-default py-indent-offset 4)
 
-
 ;; Automatically indent code when pasted.
 (dolist (command '(yank yank-pop))
   (eval `(defadvice ,command (after indent-region activate)
@@ -159,6 +158,7 @@
 (global-set-key (kbd "C-<end>") 'end-of-buffer)
 
 ;; Killing and yanking.
-
+(define-key global-map (kbd "<delete>") 'delete-char)
+(define-key global-map (kbd "M-<delete>") 'kill-word)
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "C-S-<backspace>") 'kill-and-join-forward)
