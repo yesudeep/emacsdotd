@@ -20,15 +20,6 @@
 (setq-default c-basic-offset 4)
 (setq-default py-indent-offset 4)
 
-;; Automatically indent on return.
-;; See http://www.emacswiki.org/emacs-en/AutoIndentation
-;;
-;;(defun set-newline-and-indent ()
-;;  (local-set-key (kbd "RET") 'newline-and-indent))
-;;(add-hook 'c-mode 'set-newline-and-indent)
-;;(add-hook 'java-mode 'set-newline-and-indent)
-
-(define-key global-map (kbd "RET") 'newline-and-indent)
 
 ;; Automatically indent code when pasted.
 (dolist (command '(yank yank-pop))
@@ -78,8 +69,6 @@
   (if (and (eolp) (not (bolp)))
       (delete-indentation t)
     (kill-line arg)))
-(global-set-key (kbd "C-k") 'kill-whole-line)
-(global-set-key (kbd "C-S-<backspace>") 'kill-and-join-forward)
 
 ;; Inhibit startup message.
 (setq inhibit-startup-message t)
@@ -113,8 +102,6 @@
   (interactive "p")
   (move-line (if (null n) 1 n)))
 
-(global-set-key (kbd "M-<up>") 'move-line-up)
-(global-set-key (kbd "M-<down>") 'move-line-down)
 
 ;; End line movement.
 
@@ -146,3 +133,32 @@
 (setq cua-enable-cua-keys nil)
 (setq cua-keep-region-after-copy t)
 (setq cua-auto-tabify-rectangles nil)
+
+
+;; ***************************************************************************
+;; Key bindings
+;;
+
+;; Line movement.
+
+(global-set-key (kbd "M-<up>") 'move-line-up)
+(global-set-key (kbd "M-<down>") 'move-line-down)
+
+;; Automatically indent on return.
+;; See http://www.emacswiki.org/emacs-en/AutoIndentation
+
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+;; Cursor movement.
+
+;;(global-set-key (kbd "<home>") 'beginning-of-line)
+;;(global-set-key (kbd "<end") 'end-of-line)
+(global-set-key (kbd "<home>") 'beginning-of-visual-line)
+(global-set-key (kbd "<end>") 'end-of-visual-line)
+(global-set-key (kbd "C-<home>") 'beginning-of-buffer)
+(global-set-key (kbd "C-<end>") 'end-of-buffer)
+
+;; Killing and yanking.
+
+(global-set-key (kbd "C-k") 'kill-whole-line)
+(global-set-key (kbd "C-S-<backspace>") 'kill-and-join-forward)
