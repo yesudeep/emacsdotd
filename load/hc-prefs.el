@@ -29,6 +29,8 @@
 ;;(add-hook 'java-mode 'set-newline-and-indent)
 
 (define-key global-map (kbd "RET") 'newline-and-indent)
+(define-key global-map (kbd "<delete>") 'delete-char)
+(define-key global-map (kbd "M-<delete>") 'kill-word)
 
 ;; Automatically indent code when pasted.
 (dolist (command '(yank yank-pop))
