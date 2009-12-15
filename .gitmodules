@@ -37,3 +37,6 @@
 [submodule "color-themes/color-theme-ir-black"]
 	path = color-themes/color-theme-ir-black
 	url = git://github.com/burke/color-theme-ir-black.git
+[submodule "modes/dpaste"]
+	path = modes/dpaste
+	url = git://github.com/gregnewman/dpaste.el.git
