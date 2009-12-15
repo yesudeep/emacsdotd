@@ -6,7 +6,8 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; Enable the use of the mouse-wheel.
-(mouse-wheel-mode t)
+;; Breaks in the console.
+;;(mouse-wheel-mode t)
 
 ;; Do not make any backup files.
 (setq make-backup-files nil)
@@ -144,6 +145,10 @@
 (setq cua-keep-region-after-copy t)
 (setq cua-auto-tabify-rectangles nil)
 
+;; Pastebin functionality.
+;;
+(require 'dpaste nil)
+(setq dpaste-poster "Anonymous Coward")
 
 ;; ***************************************************************************
 ;; Key bindings
@@ -176,3 +181,6 @@
 
 ;; Line insertion
 (global-set-key (kbd "S-<return>") 'insert-empty-line)
+
+;; Online paste services.
+(global-set-key (kbd "C-c p") 'dpaste-region-or-buffer)
