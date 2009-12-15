@@ -104,6 +104,17 @@
 
 ;; End line movement.
 
+;; ***************************************************************************
+;; Line insertion
+;; ---------------
+;; insert an empty line after the current line and position the cursor
+;; on its beginning
+(defun insert-empty-line ()
+  (interactive)
+  (move-end-of-line nil)
+  (open-line 1)
+  (next-line 1))
+
 ;; Syntax highlighting
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
@@ -162,3 +173,6 @@
 (define-key global-map (kbd "M-<delete>") 'kill-word)
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "C-S-<backspace>") 'kill-and-join-forward)
+
+;; Line insertion
+(global-set-key (kbd "S-<return>") 'insert-empty-line)
