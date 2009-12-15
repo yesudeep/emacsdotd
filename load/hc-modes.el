@@ -149,3 +149,20 @@
 (add-hook 'find-file-hooks 'dot-mode-on)
 (global-set-key [(control ?.)] (lambda () (interactive) (dot-mode 1)
                                  (message "Dot mode activated.")))
+
+
+;; ***************************************************************************
+;; Javascript Espresso Mode:
+;; http://www.nongnu.org/espresso/
+;; Didn't like the indentation espresso does.
+
+;;(autoload #'espresso-mode "espresso" "Start espresso-mode" t)
+;;(add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . espresso-mode))
+(autoload 'js2-mode' "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . js2-mode))
+
+
+;; ***************************************************************************
+;; Scala mode.
+(autoload 'scala-mode "scala-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.scala$" . scala-mode))
