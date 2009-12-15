@@ -89,7 +89,8 @@
                 sgml-mode
                 sh-mode
                 xml-mode
-                yaml-mode))
+                yaml-mode
+                scala-mode))
 ;; (add-to-list 'ac-trigger-commands 'org-self-insert-command) ; if you want enable auto-complete at org-mode, uncomment this line
 
 
