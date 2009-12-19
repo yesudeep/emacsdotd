@@ -110,11 +110,19 @@
 ;; ---------------
 ;; insert an empty line after the current line and position the cursor
 ;; on its beginning
-(defun insert-empty-line ()
+(defun insert-empty-line-below ()
   (interactive)
   (move-end-of-line nil)
   (open-line 1)
   (next-line 1))
+(defun insert-empty-line-above ()
+  (interactive)
+  (previous-line 1)
+  (move-end-of-line nil)
+  (open-line 1)
+  (next-line 1)
+  )
+
 
 ;; Syntax highlighting
 (global-font-lock-mode t)
@@ -149,6 +157,7 @@
 ;;
 (require 'dpaste nil)
 (setq dpaste-poster "Anonymous Coward")
+;;(require 'pastebin)
 
 ;; ***************************************************************************
 ;; Key bindings
@@ -180,7 +189,9 @@
 (global-set-key (kbd "C-S-<backspace>") 'kill-and-join-forward)
 
 ;; Line insertion
-(global-set-key (kbd "S-<return>") 'insert-empty-line)
+(global-set-key (kbd "C-S-<return>") 'insert-empty-line-above)
+(global-set-key (kbd "S-<return>") 'insert-empty-line-below)
 
 ;; Online paste services.
 (global-set-key (kbd "C-c p") 'dpaste-region-or-buffer)
+;;(global-set-key (kbd "C-c p") 'pastebin)
