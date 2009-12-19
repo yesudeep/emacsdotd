@@ -122,6 +122,13 @@
   (open-line 1)
   (next-line 1)
   )
+(defun insert-empty-line-below-next-line ()
+  (interactive)
+  (next-line 1)
+  (move-end-of-line nil)
+  (open-line 1)
+  (next-line 1)
+  )
 
 
 ;; Syntax highlighting
@@ -191,6 +198,7 @@
 ;; Line insertion
 (global-set-key (kbd "C-S-<return>") 'insert-empty-line-above)
 (global-set-key (kbd "S-<return>") 'insert-empty-line-below)
+(global-set-key (kbd "s-<return>") 'insert-empty-line-below-next-line)
 
 ;; Online paste services.
 (global-set-key (kbd "C-c p") 'dpaste-region-or-buffer)
